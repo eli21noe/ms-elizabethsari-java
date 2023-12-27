@@ -29,5 +29,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
-        repository: elizabethsariu/testdevsu
+        repository: elizabethsariu/ms-test-java
         tags: latest, ${{ github.run_number }}
