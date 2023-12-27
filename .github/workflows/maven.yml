@@ -6,9 +6,7 @@ on:
     branches: [ "feature-ms-elizabethSari-mensaje" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -16,14 +14,19 @@ jobs:
       uses: actions/checkout@v2
     - name: Otorgar permisos de ejecución a mvnw
       run: chmod +x mvnw
-    - name: Set up JDK 8
-      uses: actions/setup-java@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
       with:
-          java-version: '8'
+          java-version: '1.8'
           distribution: 'adopt'
           
-    - name: Verificar Cobertura
-      uses: matthijsgroen/coverage-action@v2
+    - name: Add coverage to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.6.1
       with:
-        coverageFile: './path/to/coverage-report'  # Ruta al archivo de cobertura
-        minCoverage: 85  # Porcentaje mínimo requerido de cobertura
+        paths: |
+          ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
+          ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 40
+        min-coverage-changed-files: 60
