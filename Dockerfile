@@ -4,7 +4,7 @@ ENV SPRING_PROFILES_ACTIVE=prod
 ENV PORT=8080
 
 RUN mkdir /app
-USER devsuapp
+
 
 
 COPY ./target/testing-web-complete-0.0.1-SNAPSHOT.jar app.jar
