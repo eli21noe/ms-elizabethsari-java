@@ -1,4 +1,4 @@
-name: Pipeline
+name: Docker Image CI
 on:
   push:
     branches: [ "feature-ms-elizabethSari-mensaje" ]
