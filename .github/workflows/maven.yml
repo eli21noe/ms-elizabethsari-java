@@ -21,3 +21,9 @@ jobs:
       with:
           java-version: '8'
           distribution: 'adopt'
+          
+    - name: Verificar Cobertura
+      uses: matthijsgroen/coverage-action@v2
+      with:
+        coverageFile: './path/to/coverage-report'  # Ruta al archivo de cobertura
+        minCoverage: 85  # Porcentaje mínimo requerido de cobertura
