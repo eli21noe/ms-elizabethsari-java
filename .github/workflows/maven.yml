@@ -1,5 +1,4 @@
-name: Docker Image CI
-
+name: Pipeline
 on:
   push:
     branches: [ "feature-ms-elizabethSari-mensaje" ]
@@ -13,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout del código
     - uses: actions/checkout@v2
     - name: Otorgar permisos de ejecución a mvnw
       run: chmod +x mvnw
@@ -20,4 +20,3 @@ jobs:
       uses: actions/setup-java@v2
       with:
           java-version: '8'
-          distribution: 'adopt'
