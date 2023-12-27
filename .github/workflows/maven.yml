@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "feature-ms-elizabethSari-mensaje" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "feature-ms-elizabethSari-mensaje" ]
 
 jobs:
 
