@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: ms-java
-        image: elizabethsari/ms-java:latest
+        image: elizabethsariu/ms-java-esari:latest
         ports:
         - containerPort: 8080
