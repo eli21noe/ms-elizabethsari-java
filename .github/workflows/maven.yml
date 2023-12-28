@@ -40,13 +40,7 @@ jobs:
         tags: latest, ${{ github.run_number }}
     
     - name: Set up Minikube
-      uses: appleboy/setup-minikube@v1  # Configura Minikube
-    - name: Load Docker image into Minikube
       run: |
-        # Carga la imagen de Docker en Minikube
-        # Antes de ejecutar este comando, asegúrate de que Minikube esté iniciado
-        eval $(minikube docker-env)
-        docker tag ms-java-esari:latest minikube:ms-java-esari
         kubectl apply -f deployment.yaml  # Asegúrate de tener tu archivo de deployment en la ruta adecuada
 
   
