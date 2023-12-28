@@ -30,3 +30,11 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
         min-coverage-changed-files: 60
+    
+    - name: Build the Docker image
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASS }}
+        repository: elizabethsariu/ms-java-esari
+        tags: latest, ${{ github.run_number }}
