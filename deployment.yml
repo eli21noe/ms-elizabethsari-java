@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-test-java
+  labels:
+    app: ms-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-java
+  template:
+    metadata:
+      labels:
+        app: ms-java
+    spec:
+      containers:
+      - name: ms-java
+        image: elizabethsari/ms-java:latest
+        ports:
+        - containerPort: 8080
