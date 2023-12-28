@@ -41,6 +41,6 @@ jobs:
     
     - name: Set up Minikube
       run: |
-        kubectl apply -f deployment.yaml  # Asegúrate de tener tu archivo de deployment en la ruta adecuada
+        kubectl apply -f deployment.yml  # Asegúrate de tener tu archivo de deployment en la ruta adecuada
 
   
